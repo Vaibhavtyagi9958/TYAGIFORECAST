@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tyagiforecast xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <station id="IND-UP-GZB-01">
+        <location>
+            <city>Ghaziabad</city>
+            <country>India</country>
+            <coordinates lat="28.6692" lon="77.4538"/>
+        </location>
+        <observation timestamp="2026-10-28T22:45:00Z">
+            <temperature unit="celsius">26.0</temperature>
+            <humidity unit="percent">62</humidity>
+            <precipitation unit="mm" probability="0">0.0</precipitation>
+            <wind speed_kmh="11" direction="ESE"/>
+            <aqi category="Moderate">
+                <score>142</score>
+                <primary_pollutant>PM2.5</primary_pollutant>
+            </aqi>
+        </observation>
+    </station>
+</tyagiforecast>

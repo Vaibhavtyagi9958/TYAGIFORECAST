@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TYAGIFORECAST | Live Atmospheric & AQI Intelligence</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Feather Icons for clean modern iconography -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <div class="background-glow"></div>
+
+  <!-- Top Navigation -->
+  <header class="navbar">
+    <div class="logo">
+      <i data-feather="cloud-lightning" class="brand-icon"></i>
+      <span>TYAGIFORECAST</span>
+    </div>
+
+    <div class="search-bar">
+      <i data-feather="map-pin"></i>
+      <input type="text" id="cityInput" placeholder="Enter city (e.g., Ghaziabad, Tokyo, London)..." />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div class="unit-toggle">
+      <button id="unitC" class="active">°C</button>
+      <button id="unitF">°F</button>
+    </div>
+  </header>
+
+  <!-- Main Grid Dashboard -->
+  <main class="dashboard-grid">
+    <!-- Main Current Conditions Card -->
+    <section class="card primary-card">
+      <div class="card-header">
+        <div>
+          <h1 id="cityName">Ghaziabad, India</h1>
+          <p id="localDateTime" class="subtitle">Wednesday, 28 Oct 2026 | 10:45 PM</p>
+        </div>
+        <span class="badge" id="conditionBadge">Clear Night</span>
+      </div>
+
+      <div class="temp-display">
+        <span id="tempValue">26</span><span class="degree-sym">°C</span>
+        <div class="temp-meta">
+          <p>Feels like: <strong id="feelsLike">27°C</strong></p>
+          <p>H: <span id="tempHigh">31°C</span> | L: <span id="tempLow">20°C</span></p>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Grid -->
+      <div class="quick-metrics">
+        <div class="metric-item">
+          <i data-feather="droplet"></i>
+          <div>
+            <span>Humidity</span>
+            <strong id="humidityVal">62%</strong>
+          </div>
+        </div>
+        <div class="metric-item">
+          <i data-feather="wind"></i>
+          <div>
+            <span>Wind Speed</span>
+            <strong id="windVal">11 km/h (ESE)</strong>
+          </div>
+        </div>
+        <div class="metric-item">
+          <i data-feather="cloud-rain"></i>
+          <div>
+            <span>Precipitation</span>
+            <strong id="precipVal">0% (0.0 mm)</strong>
+          </div>
+        </div>
+        <div class="metric-item">
+          <i data-feather="sun"></i>
+          <div>
+            <span>UV Index</span>
+            <strong id="uvVal">0 (Low)</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Air Quality Index (AQI) Card -->
+    <section class="card aqi-card">
+      <div class="card-header">
+        <h2>Air Quality Index (AQI)</h2>
+        <span class="badge aqi-status" id="aqiBadge">Moderate</span>
+      </div>
+
+      <div class="aqi-meter-box">
+        <div class="aqi-score" id="aqiScore">142</div>
+        <p class="aqi-desc" id="aqiAdvice">Acceptable quality; sensitive individuals should limit prolonged outdoor exertion.</p>
+      </div>
+
+      <!-- Pollutant Breakdown Grid -->
+      <div class="pollutants-grid">
+        <div class="pollutant-box">
+          <small>PM2.5</small>
+          <strong id="pm25Val">54.2 µg/m³</strong>
+        </div>
+        <div class="pollutant-box">
+          <small>PM10</small>
+          <strong id="pm10Val">98.0 µg/m³</strong>
+        </div>
+        <div class="pollutant-box">
+          <small>NO₂</small>
+          <strong id="no2Val">28.4 ppb</strong>
+        </div>
+        <div class="pollutant-box">
+          <small>O₃</small>
+          <strong id="o3Val">34.1 ppb</strong>
+        </div>
+        <div class="pollutant-box">
+          <small>CO</small>
+          <strong id="coVal">0.8 ppm</strong>
+        </div>
+        <div class="pollutant-box">
+          <small>SO₂</small>
+          <strong id="so2Val">5.0 ppb</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- 24-Hour Timeline -->
+    <section class="card hourly-card">
+      <h2>24-Hour Forecast</h2>
+      <div class="hourly-slider" id="hourlySlider">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- 7-Day Extended Forecast -->
+    <section class="card daily-card">
+      <h2>7-Day Extended Outlook</h2>
+      <div class="daily-list" id="dailyList">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 TYAGIFORECAST System. Powered by HTML5, CSS3, JS, PHP & Java Servlet/JSP Architecture.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
